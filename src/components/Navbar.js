@@ -1,9 +1,11 @@
 import Link from "next/link";
 import React from "react";
 import { useRouter } from "next/router";
-import { BiSearch } from "react-icons/bi";
 import { BsBellFill } from "react-icons/bs";
 import { BiLogInCircle } from "react-icons/bi";
+import {useSession } from "next-auth/react";
+import Login from "./Login";
+
 
 
 
@@ -15,7 +17,12 @@ const Navbar = () => {
   const isSoundPage = router.pathname === "/SoundTrack"; // Check if the current page is the index page
   const isMusiconPage = router.pathname === "/Musicon"; // Check if the current page is the index page
   
-  
+  const { data: session } = useSession();
+  const handleLogout = async () => {
+    await signOut({ redirect: false });
+    router.push("/");
+};
+if (!session) return <Login />
 
   return (
     <nav>

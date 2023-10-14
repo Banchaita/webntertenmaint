@@ -11,10 +11,12 @@
   "dependencies": {
     "firebase": "^9.15.0",
     "next": "13.5.4",
+    "next-auth": "^4.23.2",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.11.0",
     "react-phone-input-2": "^2.15.1",
+    "react-player": "^2.13.0",
     "tailwind-scrollbar-hide": "^1.1.7"
   },
   "devDependencies": {
