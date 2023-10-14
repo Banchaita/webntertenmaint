@@ -2,26 +2,149 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+    html, body {
+      @apply overflow-x-hidden;
+    }
+  
+    body {
+    @apply relative text-white bg-[#021C89];
+      background-image: url('/background.jpg'); /* <-- Add a semicolon here */
+      background-size: cover;
+    }
+    nav {
+        @apply fixed top-0 z-50 flex w-full items-center justify-between px-4 py-4 transition-all lg:px-10 lg:py-6;
+    }
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+  @layer components {
+    .login_bg_gradient{
+      background-image: url('/background.jpg');
+      /* background: linear-gradient(90deg, rgb(2,12,88) 0%, rgb(2,19,124) 35%, rgb(7,71,192) 100%); */
+      height: 100vh; /* Set to 100vh to ensure the div covers the entire viewport height */
+      overflow-y: auto; /* Enable vertical scrolling when content overflows the viewport height */
+  
+    }
+    .signup_bg_gradient{
+      background-color: aliceblue;
+    }
+    .iti__country-list {
+      background-color: #111010 !important;
+      max-width: 258px !important;
+  }
+  
+    .headerLink{
+      @apply cursor-pointer text-sm font-semibold text-[#2d2a2a] transition duration-[.4s] hover:text-[#595555]
+    }
+  
+    .bannerButton {
+      @apply flex items-center gap-x-2 rounded px-5 py-1.5 text-sm font-semibold transition hover:opacity-75 md:py-2.5 md:px-8 md:text-xl;
+    }
+    .logo{
+      width: 100px;
+    }
+    .home-area{
+        overflow-y: hidden;
+    }
+    
+    .storyteller {
+        position: relative;
+        background-image: url('/story.jpg');
+        background-size: cover;
+        height: 300px; /* Set the desired height */
+        width: 170px; /* Set the desired width */
+        background-repeat: no-repeat;
+      }
+    .musicon{
+      position: relative;
+      background-image: url('/music.jpg');
+      background-size: cover;
+      height: 300px; /* Set the desired height */
+      width: 170px; /* Set the desired width */
+      background-repeat: no-repeat;
+    }
+    
+  
+    .lifestyle {
+      position: relative;
+      background-image: url('/life-style.jpg');
+      background-size: cover;
+      height: 300px; /* Set the desired height */
+      width: 170px; /* Set the desired width */
+      background-repeat: no-repeat;
+      
+    }
+    
+    .soundtrack {
+      position: relative;
+      background-image: url('/sound.jpg');
+      background-size: cover;
+      height: 300px; /* Set the desired height */
+      width: 170px; /* Set the desired width */
+      background-repeat: no-repeat;
+      
+    }
+   
+  /* Styles for screens smaller than 640px (mobile devices) */
+  @media (max-width: 640px) {
+    .login_bg_gradient {
+      /* Define styles for the background or any other element */
+    }
+  
+    .w-80 {
+      width: 100%; /* Set the width to 100% for smaller screens */
+    }
+  
+    .col-span-6 {
+      grid-column: span 6; /* Set the grid column span for smaller screens */
+    }
+  
+    .md\:col-span-3 {
+      grid-column: span 6; /* Set the grid column span for smaller screens */
+    }
+  
+    /* Add more responsive styles as needed */
+  }
+  
+  /* Styles for screens between 640px and 1024px (tablets) */
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .login_bg_gradient {
+      /* Define styles for the background or any other element */
+    }
+  
+    .w-80 {
+      width: 80%; /* Set the width to 80% for medium-sized screens */
+    }
+  
+    .col-span-6,
+    .md\:col-span-3 {
+      grid-column: span 6; /* Set the grid column span for medium-sized screens */
+    }
+  
+    /* Add more responsive styles as needed */
+  }
+  
+  /* Styles for screens larger than 1024px (desktops) */
+  @media (min-width: 1025px) {
+    .login_bg_gradient {
+      /* Define styles for the background or any other element */
+    }
+  
+    .w-80 {
+      width: 60%; /* Set the width to 60% for large screens */
+    }
+  
+    .col-span-6,
+    .md\:col-span-3 {
+      grid-column: span 3; /* Set the grid column span for large screens */
+    }
+  
+    /* Add more responsive styles as needed */
+  }
+  
+    
+    
+  
+  
+  }
+  
